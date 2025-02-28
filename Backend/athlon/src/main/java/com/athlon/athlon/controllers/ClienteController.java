@@ -23,7 +23,7 @@ public class ClienteController {
 
     //Obtener todos los clientes
     @GetMapping
-    public List<Cliente> getAllClients(){
+    public List <Cliente> getAllClients () {
         return clienteRepositorie.findAll();
     }
     
@@ -35,7 +35,7 @@ public class ClienteController {
 
     //Crear un cliente
     @PostMapping
-    public Cliente CreateClient(@RequestBody Cliente cliente) {
+    public Cliente CreateClient (@RequestBody Cliente cliente) {
         return clienteRepositorie.save(cliente);
     }
 
@@ -48,7 +48,7 @@ public class ClienteController {
 
     //Eliminar un cliente
     @DeleteMapping("/{clienteID}")
-    public void deleteCLiente(@PathVariable Long clienteID) {
+    public void deleteCLiente (@PathVariable Long clienteID) {
         clienteRepositorie.deleteById(clienteID);
     }
 }
