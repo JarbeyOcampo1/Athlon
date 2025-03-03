@@ -1,6 +1,6 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import './App.css'
-import Major from './Major'
+import LoginsForm from './componentsLogin/LoginsForm'
 import Logins from './componentsLogin/Logins'
 
 function App() {
