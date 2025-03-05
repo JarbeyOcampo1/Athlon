@@ -9,19 +9,26 @@ function ClientForm ({onSubmit, initialClient}) {
     const [fechaRegistro, setFechaRegistro] = useState('');
     const [fechaVencimiento, setFechaVencimiento] = useState('');
 
+    //formato para pasar la fecha a formato  dd-mm-yyyy a yyyy-mm-dd
+    const formatDateForInput = (dateString) => {
+        if (!dateString) return '';
+        const [day,moth,year] = dateString.split('/');
+        return `${year}-${moth}-${day}`;
+    }
+
     useEffect(() => {
         if (initialClient) {
             setNombreC(initialClient.nombreC);
             setApellidoC(initialClient.apellidoC);
             setEmail(initialClient.email);
-            setFechaRegistro(initialClient.fechaRegistro);
-            setFechaVencimiento(initialClient.fechaVencimiento);
+            setFechaRegistro(formatDateForInput(initialClient.fechaRegistro));
+            setFechaVencimiento(formatDateForInput(initialClient.fechaVencimiento));
         };
     },[initialClient]);
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        const resData = {nombreC,apellidoC,email,fechaRegistro,fechaVencimiento};
+        const resData = {nombreC,apellidoC,email,fechaRegistro : formatDateForInput(fechaRegistro),fechaVencimiento : formatDateForInput(fechaVencimiento)};(fechaVencimiento)
         onSubmit(resData);
         setNombreC('');
         setApellidoC('');
@@ -32,7 +39,7 @@ function ClientForm ({onSubmit, initialClient}) {
 
     //ingreso de los datos del cliente
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <div>
                 <label>Nombres: </label>
                 <input type="text" className='' placeholder='Nombres del cliente' value={nombreC} onChange={(e) => setNombreC(e.target.value)} required/>
@@ -47,11 +54,11 @@ function ClientForm ({onSubmit, initialClient}) {
             </div>
             <div>
                 <label>Fecha de Registro: </label>
-                <input type="time" className='' value={fechaRegistro} onChange={(e) => setFechaRegistro(e.target.value)} required/>
+                <input type="date" className='' value={fechaRegistro} onChange={(e) => setFechaRegistro(e.target.value)} required/>
             </div>
             <div>
                 <label>Fecha de Vencimiento: </label>
-                <input type="time" className='' value={fechaVencimiento} onChange={(e) =>setFechaVencimiento(e.target.value)} required/>
+                <input type="date" className='' value={fechaVencimiento} onChange={(e) =>setFechaVencimiento(e.target.value)} required/>
             </div>
             <div>
                 <button type='submit'>{initialClient ? 'Actualizar' : 'Guardar'}</button>
