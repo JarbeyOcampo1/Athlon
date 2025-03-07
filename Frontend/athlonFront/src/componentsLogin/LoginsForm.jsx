@@ -24,7 +24,6 @@ function LoginsForm ({onSubmit, initialLogin}) {
         setPassword('');
         setCargo('');
     };
-
     //ingreso de los datos de login 
     return (
         <form onSubmit={handleSubmit}>
