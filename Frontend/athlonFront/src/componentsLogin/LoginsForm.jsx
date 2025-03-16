@@ -47,4 +47,4 @@ function LoginsForm ({onSubmit, initialLogin}) {
     );
 }
 
-export default LoginsForm;
+export default LoginsForm; 
