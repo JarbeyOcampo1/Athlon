@@ -11,15 +11,15 @@ body{
     overflow-x: hidden;
     
 }
+
 .Container_Major {
     display: flex;
-    justify-content: unset; 
+    justify-content: space-between; /* Separa el logo y la navbar */
     align-items: center;
-    background-color: #cf911d;
-    width: 100%;
     padding: 1vw 2vw;
-   
+    background-color: #cf911d;
 }
+
 
 .navbar {
     display: flex;
@@ -80,10 +80,10 @@ img {
 
 .title-container {
     display: flex;
-    justify-content: center;  
-    align-items: center;             
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding-top: 5px;
+    width: 100%;
 }
 
 .title {
@@ -94,12 +94,14 @@ img {
     display: inline-block;
     overflow: hidden;
     white-space: nowrap;
+
 }
 
 .title span {
     display: inline-block;
     opacity: 0;
     animation: fadeIn 0.5s ease-in-out forwards;
+   
 }
 
 /* Aplica la animación con un retraso progresivo para cada letra */
@@ -108,9 +110,45 @@ img {
 .title span:nth-child(3) { animation-delay: 0.2s; }
 .title span:nth-child(4) { animation-delay: 0.3s; }
 .title span:nth-child(5) { animation-delay: 0.4s; }
+.title span:nth-child(6) { animation-delay: 0.5s; }
+.title span:nth-child(7) { animation-delay: 0.6s; }
+.title span:nth-child(8) { animation-delay: 0.7s; }
+.title span:nth-child(9) { animation-delay: 0.8s; }
+.title span:nth-child(10) { animation-delay: 0.9s; }
+.title span:nth-child(11) { animation-delay: 1s; }
+.title span:nth-child(12) { animation-delay: 1.1s; }
+.title span:nth-child(13) { animation-delay: 1.2s; }
+.title span:nth-child(14) { animation-delay: 1.3s; }
 
 .logo-container {
     width: 60px;
-    height: 38px;
+    height: 50px;
     margin-right: 930px;
 }
+
+.footer {
+    background-color: #222; 
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.8rem; 
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2); 
+    color: #f39c12; 
+}
+  
