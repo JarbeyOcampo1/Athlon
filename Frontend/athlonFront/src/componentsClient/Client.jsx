@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import ClientTable from "./ClientTable";
@@ -56,7 +57,12 @@ function Client () {
     }
 
     return (
+        
         <div>
+            <header>
+            <Link to="/"> Pagina principal </Link>
+            <Link to="/Plan"> Planes </Link>
+            </header>
             <h1>Clientes</h1>
             <ClientTable clients={client} onEdit={handleEditCLient} onDelete={handleDeleteClient}/>
             <h3>{editingClient ? 'Editar Cliente' : 'Crear Cliente'}</h3>
