@@ -1,21 +1,22 @@
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import './App.css'
-import Client from './componentsClient/Client'
-import Plan from './componentsPlan/Plan'
-import Major from './Major'
-import Factura from './componentsFactura/Factura'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import './App.css';
+import LoginsForm from './componentsLogin/LoginsForm';
+import Logins from './componentsLogin/Logins';
+import Client from './componentsClient/Client';
 
 function App() {
-  
+  return (
+    <BrowserRouter>
+      <Routes>
+        {/* Página principal */}
+        <Route index element={<Client />} />
 
-  return <BrowserRouter>
-    <Routes>
-      <Route index path="/" element={<Major/>}/>
-      <Route path='/Client' element={<Client/>}/>
-      <Route path='/Plan' element={<Plan/>}/>
-      <Route path='/Factura' element={<Factura/>}/>
-    </Routes>
-  </BrowserRouter>
+        {/* Rutas para login */}
+        <Route path="/login/form" element={<LoginsForm />} />
+        <Route path="/login" element={<Logins />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

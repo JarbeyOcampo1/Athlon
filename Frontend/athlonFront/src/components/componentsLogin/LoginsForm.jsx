@@ -24,7 +24,6 @@ function LoginsForm ({onSubmit, initialLogin}) {
         setPassword('');
         setCargo('');
     };
-
     //ingreso de los datos de login 
     return (
         <form onSubmit={handleSubmit}>
@@ -48,4 +47,4 @@ function LoginsForm ({onSubmit, initialLogin}) {
     );
 }
 
-export default LoginsForm;
+export default LoginsForm; 
