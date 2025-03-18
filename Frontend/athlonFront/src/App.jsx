@@ -3,7 +3,6 @@ import "./App.css";
 
 // Componentes
 import LoginsForm from "./components/componentsLogin/LoginsForm";
-import Logins from "./components/componentsLogin/Logins";
 import Client from "./components/componentsClient/Client";
 import InicioSesionForm from "./components/componentsInicioS/inicioSesionForm";
 
@@ -15,7 +14,6 @@ function App() {
         <Route index element={<Client />} />
 
         {/* Rutas para login */}
-        <Route path="/login" element={<Logins />} />
         <Route path="/login/form" element={<LoginsForm />} />
 
         {/* Otra vista de inicio de sesión */}
