@@ -1,0 +1,154 @@
+body{
+    background-color: gray;
+    background-image: url("./imagenes/fondo2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; 
+    margin: 0;
+    padding: 0;
+    backdrop-filter: blur(3px);
+    overflow-x: hidden;
+    
+}
+
+.Container_Major {
+    display: flex;
+    justify-content: space-between; /* Separa el logo y la navbar */
+    align-items: center;
+    padding: 1vw 2vw;
+    background-color: #cf911d;
+}
+
+
+.navbar {
+    display: flex;
+    gap: 3vw; 
+}
+
+.navbar a, 
+.navbar Link {
+    text-decoration: none; 
+    color: white;
+    font-size: 1.6vw; 
+    font-weight: bold;
+    transition: color 0.3s;
+    
+}
+
+.navbar a:hover, 
+.navbar Link:hover {
+    color: black;
+}
+
+.carrousel {
+    display: flex;
+    gap: 5px;
+    overflow-x: scroll;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 80vh;
+    scroll-snap-type: mandatory;
+    
+} 
+
+img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    filter: drop-shadow(1px 1px 1px black);
+}
+
+.carrousel >div {
+    scroll-snap-align: center;
+    min-width: 300px;
+    margin: 10px;
+    background-color: gray;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.title {
+    justify-content: center; 
+    position: relative;
+    font-size: 2rem;
+    font-weight: bold;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+
+}
+
+.title span {
+    display: inline-block;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+   
+}
+
+/* Aplica la animación con un retraso progresivo para cada letra */
+.title span:nth-child(1) { animation-delay: 0s; }
+.title span:nth-child(2) { animation-delay: 0.1s; }
+.title span:nth-child(3) { animation-delay: 0.2s; }
+.title span:nth-child(4) { animation-delay: 0.3s; }
+.title span:nth-child(5) { animation-delay: 0.4s; }
+.title span:nth-child(6) { animation-delay: 0.5s; }
+.title span:nth-child(7) { animation-delay: 0.6s; }
+.title span:nth-child(8) { animation-delay: 0.7s; }
+.title span:nth-child(9) { animation-delay: 0.8s; }
+.title span:nth-child(10) { animation-delay: 0.9s; }
+.title span:nth-child(11) { animation-delay: 1s; }
+.title span:nth-child(12) { animation-delay: 1.1s; }
+.title span:nth-child(13) { animation-delay: 1.2s; }
+.title span:nth-child(14) { animation-delay: 1.3s; }
+
+.logo-container {
+    width: 60px;
+    height: 50px;
+    margin-right: 930px;
+}
+
+.footer {
+    background-color: #222; 
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.8rem; 
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2); 
+    color: #f39c12; 
+}
+  

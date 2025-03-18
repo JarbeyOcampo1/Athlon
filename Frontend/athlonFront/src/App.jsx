@@ -1,10 +1,8 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./App.css";
-
-// Componentes
-import LoginsForm from "./components/componentsLogin/LoginsForm";
-import Client from "./components/componentsClient/Client";
-import InicioSesionForm from "./components/componentsInicioS/inicioSesionForm";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import './App.css';
+import LoginsForm from './componentsLogin/LoginsForm';
+import Logins from './componentsLogin/Logins';
+import Client from './componentsClient/Client';
 
 function App() {
   return (
@@ -15,9 +13,7 @@ function App() {
 
         {/* Rutas para login */}
         <Route path="/login/form" element={<LoginsForm />} />
-
-        {/* Otra vista de inicio de sesión */}
-        <Route path="/inicio" element={<InicioSesionForm />} />
+        <Route path="/login" element={<Logins />} />
       </Routes>
     </BrowserRouter>
   );
