@@ -1,19 +1,18 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
-import LoginsForm from './componentsLogin/LoginsForm';
-import Logins from './componentsLogin/Logins';
-import Client from './componentsClient/Client';
+import LoginsForm from './components/componentsLogin/LoginsForm';
+import Logins from './components/componentsLogin/Logins';
+import Client from './components/componentsClient/Client';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Página principal */}
-        <Route index element={<Client />} />
-
-        {/* Rutas para login */}
-        <Route path="/login/form" element={<LoginsForm />} />
+        <Route index path="/" element={<Client />} />
         <Route path="/login" element={<Logins />} />
+        <Route path="/loginform" element={<LoginsForm />} />
+        
+
       </Routes>
     </BrowserRouter>
   );
