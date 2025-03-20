@@ -1,6 +1,6 @@
 body{
     background-color: gray;
-    background-image: url("./imagenes/fondo2.jpg");
+    background-image: url("./components/imagenes/fondo2.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

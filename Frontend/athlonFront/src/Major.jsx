@@ -1,9 +1,9 @@
 import "./Major.css";
 import { Link } from "react-router-dom";
-import imagen1 from "./imagenes/imagen1.jpg";
-import imagen2 from "./imagenes/imagen2.jpg";
-import imagen3 from "./imagenes/imagen3.jpg";
-import logo from "./imagenes/logo.png";
+import imagen1 from "./components/imagenes/imagen1.jpg";
+import imagen2 from "./components/imagenes/imagen2.jpg";
+import imagen3 from "./components/imagenes/imagen3.jpg";
+import logo from "./components/imagenes/logo.png";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 
 function Major() {
