@@ -3,7 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import ClientTable from "./ClientTable";
 import ClientForm from "./ClientForm";
-
+import logo from "../imagenes/logo.png";
 
 function Client () {
     
@@ -56,13 +56,18 @@ function Client () {
         }
     }
 
-    return (
-        
+    return ( 
         <div>
-            <header>
-            <Link to="/"> Pagina principal </Link>
-            <Link to="/Plan"> Planes </Link>
-            </header>
+            <div className="Container_Major">
+                <div className="logo-container">
+                    <img src={logo} alt="Logo Gimnasio Atlhon" className="principal-logo-image" />
+                </div>
+                <nav className="navbar">
+                    <Link to="/">Principal</Link>
+                    <Link to="/Plan">Planes</Link>
+                    <Link to="/Factura">Factura</Link>
+                </nav>
+            </div>
             <h1>Clientes</h1>
             <ClientTable clients={client} onEdit={handleEditCLient} onDelete={handleDeleteClient}/>
             <h3>{editingClient ? 'Editar Cliente' : 'Crear Cliente'}</h3>
