@@ -1,7 +1,8 @@
 import { useState } from "react";
 import "./inicioSesion.css";
 
-function LoginForm({ onLogin }) {
+
+function InicioSesionForm({ onLogin }) {
   const [nombreUsuario, setNombreUsuario] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -9,7 +10,7 @@ function LoginForm({ onLogin }) {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = async (event) => {
-    event.preventDefault(); // Mueve esta línea dentro de la función
+    event.preventDefault();
     setLoading(true);
     setError("");
 
@@ -26,13 +27,14 @@ function LoginForm({ onLogin }) {
 
   return (
     <form className="login-form" onSubmit={handleSubmit}>
-      <h2>Iniciar Sesión</h2>
+      <h2 className="login-title">Iniciar Sesión</h2>
 
-      {error && <p className="error">{error}</p>}
+      {error && <p className="error-message">{error}</p>}
 
       <div className="form-group">
-        <label htmlFor="usuario">Usuario:</label>
+        <label className="label-usuario" htmlFor="usuario">Usuario:</label>
         <input
+          className="input-usuario"
           id="usuario"
           type="text"
           placeholder="Nombre del usuario"
@@ -43,9 +45,10 @@ function LoginForm({ onLogin }) {
       </div>
 
       <div className="form-group">
-        <label htmlFor="password">Contraseña:</label>
-        <div className="password-wrapper">
+        <label className="label-password" htmlFor="password">Contraseña:</label>
+        <div className=" password-wrapper">
           <input
+            className="input-password"
             id="password"
             type={showPassword ? "text" : "password"}
             placeholder="Contraseña"
@@ -58,16 +61,16 @@ function LoginForm({ onLogin }) {
             className="toggle-password"
             onClick={() => setShowPassword(!showPassword)}
           >
-            {showPassword ? "Ocultar" : "Mostrar"}
+            <i className={showPassword ? "fas fa-eye-slash" : "fas fa-eye"}></i>
           </button>
         </div>
       </div>
 
-      <button type="submit" disabled={loading}>
+      <button className="submit-button" type="submit" disabled={loading}>
         {loading ? "Cargando..." : "Iniciar Sesión"}
       </button>
     </form>
   );
 }
 
-export default LoginForm;
+export default InicioSesionForm;
