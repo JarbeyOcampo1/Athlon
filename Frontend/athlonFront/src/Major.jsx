@@ -18,6 +18,7 @@ function Major() {
           <Link to="/Plan">Planes</Link>
           <Link to="/Factura">Factura</Link>
           
+          
         </nav>
       </div>
       <div className="title-container">
