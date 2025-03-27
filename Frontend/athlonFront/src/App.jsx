@@ -4,7 +4,7 @@ import Logins from './components/componentsLogin/Logins';
 import Client from './components/componentsClient/Client';
 import Plan from './components/componentsPlan/Plan';
 import Factura from './components/componentsFactura/Factura';
-import InicioSesionForm from './components/componentsInicioS/inicioSesionForm'; 
+import InicioSesionForm from '../components/componentsInicioS/inicioSesionForm'; 
 import Major from './Major';
 
 function App() {
