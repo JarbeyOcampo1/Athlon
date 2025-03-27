@@ -1,11 +1,12 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
+import Major from './Major';
+import InicioSesionForm from './components/componentsInicioS/InicioSesionForm';
 import Logins from './components/componentsLogin/Logins';
 import Client from './components/componentsClient/Client';
 import Plan from './components/componentsPlan/Plan';
 import Factura from './components/componentsFactura/Factura';
-import InicioSesionForm from '../components/componentsInicioS/inicioSesionForm'; 
-import Major from './Major';
+
 
 function App() {
   return (
