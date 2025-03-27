@@ -36,7 +36,6 @@ function ClientForm ({onSubmit, initialClient}) {
         setFechaRegistro('');
         setFechaVencimiento('');
     };
-
     //ingreso de los datos del cliente
     return (
         <form onSubmit={handleSubmit}>
