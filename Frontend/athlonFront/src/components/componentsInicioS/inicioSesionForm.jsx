@@ -26,7 +26,7 @@ function InicioSesionForm({ onLogin }) {
   };
 
   return (
-    <form className="login-form" onSubmit={handleSubmit}>
+    <form className="login-formI" onSubmit={handleSubmit}>
       <h2 className="login-title">Iniciar Sesión</h2>
 
       {error && <p className="error-message">{error}</p>}
