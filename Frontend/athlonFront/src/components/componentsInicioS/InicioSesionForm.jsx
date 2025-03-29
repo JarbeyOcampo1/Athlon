@@ -24,7 +24,6 @@ function InicioSesionForm({ onLogin }) {
       setLoading(false);
     }
   };
-
   return (
     <form className="login-formI" onSubmit={handleSubmit}>
       <h2 className="login-title">Iniciar Sesión</h2>
