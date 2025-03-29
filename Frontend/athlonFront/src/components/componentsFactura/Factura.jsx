@@ -14,6 +14,7 @@ function Factura () {
                 <Link to="/">Principal </Link>
             </nav>
         </div>
+        <h1>Holaa</h1>
     </div>
  );
 }

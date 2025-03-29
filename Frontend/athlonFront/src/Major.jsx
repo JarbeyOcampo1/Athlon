@@ -14,7 +14,7 @@ function Major() {
         <img src={logo} alt="Logo Gimnasio Atlhon" className="principal-logo-image" />
         </div>
         <nav className="navbar">
-          <Link to="/client">Clientes</Link>
+          <Link to="/Client">Clientes</Link>
           <Link to="/Plan">Planes</Link>
           <Link to="/Factura">Factura</Link>
           

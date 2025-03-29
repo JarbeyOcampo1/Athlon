@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './App.css';
 import Major from './Major';
 import InicioSesionForm from './components/componentsInicioS/InicioSesionForm';
 import Logins from './components/componentsLogin/Logins';
@@ -17,7 +16,7 @@ function App() {
         <Route path='/Logins' element={<Logins />} />
         <Route path='/Plan' element={<Plan />} />
         <Route path='/Factura' element={<Factura />} />
-        <Route path='/inicioSesionForm' element={<InicioSesionForm />} /> 
+        <Route path='/InicioSesionForm' element={<InicioSesionForm />} /> 
   
       </Routes>
     </BrowserRouter>
