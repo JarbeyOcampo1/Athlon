@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Importa useNavigate
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import "./inicioSesion.css";
 
-function InicioSesionForm({ onLogin, onCancel }) {
+function InicioSesionForm({ onCancel }) {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -18,7 +19,20 @@ function InicioSesionForm({ onLogin, onCancel }) {
       const nombreUsuario = formData.get("usuario");
       const password = formData.get("password");
 
-      await onLogin({ nombreUsuario, password });
+      //peticion a la API para validar el inicio de sesión
+      const response = await axios.post("http://localhost:8080/api/logins/validar", {
+        nombreUsuario,
+        password,
+      });
+
+      // Verifica si la respuesta es exitosa y contiene el mensaje esperado
+      if (response.status === 200 && response.data.includes("Exito")) {
+        console.log("Inicio de sesión exitoso");
+
+        navigate("/Major"); // Redirige a la página principal después de iniciar sesión
+      }else {
+        setError(response.data);
+      }
     } catch (err) {
       setError("Credenciales incorrectas. Intenta de nuevo.");
     } finally {
@@ -75,7 +89,7 @@ function InicioSesionForm({ onLogin, onCancel }) {
           className="register-link"
           onClick={(e) => {
             e.preventDefault();
-            navigate("/registro"); // Redirige a la página de registro
+            navigate("/Logins"); // Redirige a la página de registro
           }}
         >
           Registrarse

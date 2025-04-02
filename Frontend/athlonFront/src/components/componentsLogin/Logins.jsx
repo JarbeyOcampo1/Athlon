@@ -1,5 +1,7 @@
 import axios from "axios";
 import LoginsForm from "./LoginsForm";
+import { Link } from "react-router-dom";
+
 import { useState, useEffect } from "react";
 
 
@@ -39,6 +41,7 @@ function Logins () {
             <h1>Crear un Usuario</h1>
             <br />
             <LoginsForm onSubmit={createLogin}/>
+            <Link to='/'> Volver </Link>
         </div>
     );
 }

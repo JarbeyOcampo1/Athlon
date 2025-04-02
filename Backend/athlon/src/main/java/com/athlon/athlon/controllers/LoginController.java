@@ -2,6 +2,8 @@ package com.athlon.athlon.controllers;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -53,14 +55,14 @@ public class LoginController {
 
     //validar si el usuario existe en la base de datos
     @PostMapping("/validar")
-    public String validateLogin (@RequestBody Login login) {
-        login = loginRepositorie.findByNombreUsuarioAndPassword(login.getNombreUsuario(),login.getPassword());
+    public ResponseEntity<String> validateLogin (@RequestBody Login login) {
+        Login foundLogin = loginRepositorie.findByNombreUsuarioAndPassword(login.getNombreUsuario(),login.getPassword());
 
-        if (login != null) {
-            return "Exito";
+        if (foundLogin != null) {
+            return ResponseEntity.status(HttpStatus.OK).body("Exito");
         }
         else{
-            return "Error";
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Error");
         }
     }
 }

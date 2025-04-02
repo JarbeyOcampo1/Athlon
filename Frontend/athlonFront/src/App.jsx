@@ -11,13 +11,14 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index path="/" element={<Major />} />
+
+        <Route index  element={<InicioSesionForm/>} /> 
+        <Route path="/Major" element={<Major />} />
         <Route path='/Client' element={<Client />} />
         <Route path='/Logins' element={<Logins />} />
         <Route path='/Plan' element={<Plan />} />
         <Route path='/Factura' element={<Factura />} />
-        <Route path='/InicioSesionForm' element={<InicioSesionForm />} /> 
-  
+
       </Routes>
     </BrowserRouter>
   );
