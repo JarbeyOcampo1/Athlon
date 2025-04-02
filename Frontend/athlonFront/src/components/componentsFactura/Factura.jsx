@@ -11,7 +11,7 @@ function Factura () {
             <nav className="navbar">
                 <Link to="/Client">Clientes</Link>
                 <Link to="/Plan">Planes</Link>
-                <Link to="/">Principal </Link>
+                <Link to="/Major">Principal </Link>
             </nav>
         </div>
         <h1>Holaa</h1>

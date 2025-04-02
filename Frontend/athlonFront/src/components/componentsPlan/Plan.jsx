@@ -11,7 +11,7 @@ function Plan() {
           </div>
           <nav className="navbar">
             <Link to="/Client">Clientes</Link>
-            <Link to="/">Principal </Link>
+            <Link to="/Major">Principal </Link>
             <Link to="/Factura">Factura</Link>
           </nav>
         </div>

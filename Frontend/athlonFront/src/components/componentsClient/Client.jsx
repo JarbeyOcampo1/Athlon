@@ -63,7 +63,7 @@ function Client () {
                     <img src={logo} alt="Logo Gimnasio Atlhon" className="principal-logo-image" />
                 </div>
                 <nav className="navbar">
-                    <Link to="/">Principal</Link>
+                    <Link to="/Major">Principal</Link>
                     <Link to="/Plan">Planes</Link>
                     <Link to="/Factura">Factura</Link>
                 </nav>
