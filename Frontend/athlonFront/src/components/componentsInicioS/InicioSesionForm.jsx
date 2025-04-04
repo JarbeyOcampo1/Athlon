@@ -29,6 +29,8 @@ function InicioSesionForm({ onCancel }) {
       if (response.status === 200 && response.data.includes("Exito")) {
         console.log("Inicio de sesión exitoso");
 
+        localStorage.setItem("Exito", response.data.token); // Guarda el token de autenticación en el almacenamiento local
+
         navigate("/Major"); // Redirige a la página principal después de iniciar sesión
       }else {
         setError(response.data);
