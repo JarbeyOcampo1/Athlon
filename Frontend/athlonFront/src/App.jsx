@@ -6,7 +6,6 @@ import Client from './components/componentsClient/Client';
 import Plan from './components/componentsPlan/Plan';
 import Factura from './components/componentsFactura/Factura';
 
-
 function App() {
   return (
     <BrowserRouter>
