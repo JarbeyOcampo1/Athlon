@@ -38,3 +38,16 @@ spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
 - **URL Y PUERTO** http://localhost:8080/(RequestMapping)
 
 *Se utilizo openjdk version 17 y spring boot 3.4.2 para el desarrollo de este proyecto.
+
+### Caracteristicas del frontend
+
+El proyecto del front esta basado en react y utilizando otras tecnologias para el manejo de la informacion 
+
+- **npm de los paquetes del proyecto en el front :**
+```javaScript
+- npm create vite@latest
+- npm i react-router-dom
+- npm install axios
+```
+
+- **URL Y PUERTO** npm run dev / http://localhost:5173/
