@@ -6,7 +6,7 @@
 
 .client-table th, .client-table td {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 8px; /* Aumentado para mejorar la legibilidad */
 }
 
 .client-table th {
@@ -19,77 +19,61 @@
     font-style: italic;
 }
 
-
-/* ClientRow Styles */
-.client-row {
-    transition: background-color 0.3s;
-}
-
-.client-row:hover {
-    background-color: #f1f1f1;
-}
-
-.client-row .action-buttons {
-    display: flex;
-    gap: 10px;
-}
-
-
 /* ClientForm Styles */
+
+/* Form Container Styles */
+.form-content {
+    max-width: 500px; /* Ancho máximo del contenedor */
+    margin: 20px auto; /* Centrar el contenedor horizontalmente */
+    padding: 20px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde del contenedor */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+    background-color: #fff; /* Color de fondo del contenedor */
+}
+
+
 .client-form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px; /* Aumentado el espacio entre los elementos */
 }
 
 .client-form label {
     font-weight: bold;
+    color: #333; /* Color del texto de las etiquetas */
+    margin-bottom: 5px; /* Espacio entre la etiqueta y el input */
 }
 
 .client-form input {
-    padding: 8px;
-    border: 1px solid #ccc;
+    padding: 12px; /* Aumentado para mayor comodidad */
+    border: 1px solid #ccc; /* Borde gris claro */
     border-radius: 4px;
+    transition: border-color 0.3s; /* Transición suave para el borde */
+}
+
+.client-form input:focus {
+    border-color: #4CAF50; /* Cambia el color del borde al enfocar */
+    outline: none; /* Sin contorno */
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Sombra para indicar enfoque */
 }
 
 .client-form button {
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
+    padding: 12px; /* Aumentado para mayor comodidad */
+    background-color: #4CAF50; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 16px; /* Aumentado el tamaño de la fuente */
+    transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
 }
 
 .client-form button:hover {
-    background-color: #45a049;
+    background-color: #45a049; /* Color de fondo al pasar el mouse */
+    transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
 }
 
-
-/* Client Styles */
-.container-major {
-    padding: 20px;
-}
-
-.logo-container {
-    text-align: center;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
-}
-
-.logout-button {
-    background-color: #f44336;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.logout-button:hover {
-    background-color: #d32f2f;
+.client-form button:active {
+    transform: scale(0.95); /* Efecto de reducción al hacer clic */
 }
