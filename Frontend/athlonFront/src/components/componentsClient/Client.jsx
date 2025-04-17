@@ -3,6 +3,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import ClientTable from "./ClientTable";
 import ClientForm from "./ClientForm";
+
+import "../componentsClient/styles.css";
 import logo from "../imagenes/logo.png";
 
 function Client () {

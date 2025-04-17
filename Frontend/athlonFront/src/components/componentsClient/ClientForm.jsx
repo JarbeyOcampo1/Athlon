@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 function ClientForm ({onSubmit, initialClient}) {
     //estado para los datos
@@ -38,7 +37,7 @@ function ClientForm ({onSubmit, initialClient}) {
     };
     //ingreso de los datos del cliente
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="client-form">
             <div>
                 <label>Nombres: </label>
                 <input type="text" className='' placeholder='Nombres del cliente' value={nombreC} onChange={(e) => setNombreC(e.target.value)} required/>
