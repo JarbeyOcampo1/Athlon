@@ -1,7 +1,25 @@
-import { Link } from "react-router-dom";
+import { Link , useNavigate} from "react-router-dom";
+import { useEffect } from "react";
 import logo from "../imagenes/logo.png";
 
 function Plan() {
+
+  const navigate = useNavigate(); 
+
+  // Verifica si el token de autenticación existe en el almacenamiento local
+  useEffect(() => {
+    const autenticar = localStorage.getItem("Exito");
+    if(!autenticar) {
+      navigate("/"); 
+    }
+  },[navigate]);
+
+  // Elimina el token de autenticación
+  const handleLogout = () => {
+    localStorage.removeItem("Exito");
+    navigate("/"); 
+  };
+
   return (
     <div>
       <div>
@@ -11,8 +29,9 @@ function Plan() {
           </div>
           <nav className="navbar">
             <Link to="/Client">Clientes</Link>
-            <Link to="/">Principal </Link>
+            <Link to="/Major">Principal </Link>
             <Link to="/Factura">Factura</Link>
+            <button onClick={handleLogout} className="logout-button">Salir</button>
           </nav>
         </div>
         </div>

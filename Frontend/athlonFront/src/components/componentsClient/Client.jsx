@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import ClientTable from "./ClientTable";
@@ -7,10 +8,26 @@ import ClientForm from "./ClientForm";
 import "../componentsClient/styles.css";
 import logo from "../imagenes/logo.png";
 
+
 function Client () {
-    
+
+    const navigate = useNavigate(); 
     const [client, setClient] = useState([]);
     const [editingClient, setEditingClient] = useState(null);
+
+    // Verifica si el token de autenticación existe en el almacenamiento local
+    useEffect(() => {
+        const autenticar = localStorage.getItem("Exito");
+        if(!autenticar) {
+        navigate("/"); 
+        }
+    },[navigate]);
+
+    // Elimina el token de autenticación
+    const handleLogout = () => {
+        localStorage.removeItem("Exito");
+        navigate("/"); 
+    };
 
     //actualizar cliente
     useEffect (() => {
@@ -65,9 +82,10 @@ function Client () {
                     <img src={logo} alt="Logo Gimnasio Atlhon" className="principal-logo-image" />
                 </div>
                 <nav className="navbar">
-                    <Link to="/">Principal</Link>
+                    <Link to="/Major">Principal</Link>
                     <Link to="/Plan">Planes</Link>
                     <Link to="/Factura">Factura</Link>
+                    <button onClick={handleLogout} className="logout-button">Salir</button>
                 </nav>
             </div>
             <h1>Clientes</h1>

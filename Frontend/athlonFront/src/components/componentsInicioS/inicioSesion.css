@@ -1,34 +1,85 @@
-body {
-  background-color: #f4f4f4;
-  /* Fondo general */
-  font-family: Arial, sans-serif;
-  /* Fuente general */
+/* Contenedor principal */
+.login-container {
   display: flex;
-  /* Activa Flexbox */
   justify-content: center;
-  /* Centra horizontalmente */
   align-items: center;
-  /* Centra verticalmente */
   height: 100vh;
-  /* Ocupa toda la altura de la pantalla */
-  margin: 0;
-  /* Elimina márgenes */
+  background: url('ruta/a/tu/imagen-de-fondo.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Contenedor de los botones */
+.login-actions {
+  display: flex;
+  /* Alinea los botones en una fila */
+  justify-content: space-between;
+  /* Espacio uniforme entre los botones */
+  gap: 15px;
+  /* Espaciado entre los botones */
+  margin-top: 20px;
+  /* Espaciado superior */
+}
+/* Botón Cancelar */
+.cancel-button {
+  width: 48%;
+  padding: 10px;
+  background-color: #cf911d;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.cancel-button:hover {
+  background-color: #b78a1d;
+}
+
+/* Botón Iniciar sesión */
+.submit-button {
+  width: 48%;
+  padding: 10px;
+  background-color: #cf911d;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #b78a1d;
+}
+
+/* Enlace Registrarse */
+.register-link {
+  display: block;
+  margin-top: 15px;
+  color: #cf911d;
+  text-decoration: none;
+  font-size: 14px;
+  text-align: center;
+}
+
+.register-link:hover {
+  text-decoration: underline;
 }
 
 .login-formI {
   max-width: 400px;
-  /* Ancho máximo */
-  min-width: 400px;
-  /* Ancho mínimo para evitar que sea demasiado pequeño */
+  width: 100%;
   padding: 20px;
   border: 1px solid #cf911d;
-  /* Borde */
   border-radius: 8px;
-  background-color: #ffffff;
-  /* Fondo blanco */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.9);
+  /* Fondo blanco con transparencia */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  /* Sombra más visible */
 }
-
 
 .login-title {
   font-size: 24px;
@@ -56,22 +107,33 @@ body {
   /* Color de las etiquetas */
 }
 
+/* Estilos para los inputs de usuario y contraseña */
 .input-usuario,
 .input-password {
   width: 100%;
+  /* Ambos inputs ocuparán el 100% del ancho del contenedor */
   padding: 10px;
+  /* Espaciado interno uniforme */
   border: 1px solid #cf911d;
-  /* Borde del mismo color que el contenedor principal */
+  /* Borde del mismo color */
   border-radius: 4px;
+  /* Bordes redondeados */
   box-sizing: border-box;
+  /* Incluye el padding y el borde en el ancho total */
+  font-size: 14px;
+  /* Tamaño de fuente uniforme */
+  line-height: 1.5;
+  /* Altura de línea uniforme */
   transition: border-color 0.3s;
+  /* Transición suave al enfocar */
 }
 
 .input-usuario:focus,
 .input-password:focus {
   border-color: #007bff;
-  /* Color del borde al enfocar */
+  /* Cambia el color del borde al enfocar */
   outline: none;
+  /* Elimina el borde predeterminado del navegador */
 }
 
 .password-wrapper {
@@ -87,19 +149,6 @@ body {
   cursor: pointer;
   margin-left: 5px;
   font-size: 1.2rem;
-}
-
-.submit-button {
-  width: 100%;
-  padding: 10px;
-  background-color: #cf911d;
-  /* Color de fondo del botón */
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s;
 }
 
 .submit-button:hover {

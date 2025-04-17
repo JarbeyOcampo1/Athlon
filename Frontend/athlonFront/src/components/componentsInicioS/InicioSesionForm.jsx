@@ -1,13 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import "./inicioSesion.css";
 
-
-function InicioSesionForm({ onLogin }) {
-  const [nombreUsuario, setNombreUsuario] = useState("");
-  const [password, setPassword] = useState("");
+function InicioSesionForm({ onCancel }) {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const [showPassword, setShowPassword] = useState(false);
+
+  const navigate = useNavigate(); // Inicializa useNavigate
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -15,60 +15,89 @@ function InicioSesionForm({ onLogin }) {
     setError("");
 
     try {
-      await onLogin({ nombreUsuario, password });
-      setNombreUsuario("");
-      setPassword("");
+      const formData = new FormData(event.target);
+      const nombreUsuario = formData.get("usuario");
+      const password = formData.get("password");
+
+      //peticion a la API para validar el inicio de sesión
+      const response = await axios.post("http://localhost:8080/api/logins/validar", {
+        nombreUsuario,
+        password,
+      });
+
+      // Verifica si la respuesta es exitosa y contiene el mensaje esperado
+      if (response.status === 200 && response.data.includes("Exito")) {
+        console.log("Inicio de sesión exitoso");
+
+        localStorage.setItem("Exito", response.data.token); // Guarda el token de autenticación en el almacenamiento local
+
+        navigate("/Major"); // Redirige a la página principal después de iniciar sesión
+      }else {
+        setError(response.data);
+      }
     } catch (err) {
       setError("Credenciales incorrectas. Intenta de nuevo.");
     } finally {
       setLoading(false);
     }
   };
+
   return (
-    <form className="login-formI" onSubmit={handleSubmit}>
-      <h2 className="login-title">Iniciar Sesión</h2>
+    <div className="login-container">
+      <form className="login-formI" onSubmit={handleSubmit}>
+        <h2 className="login-title">Iniciar Sesión</h2>
 
-      {error && <p className="error-message">{error}</p>}
+        {error && <p className="error-message">{error}</p>}
 
-      <div className="form-group">
-        <label className="label-usuario" htmlFor="usuario">Usuario:</label>
-        <input
-          className="input-usuario"
-          id="usuario"
-          type="text"
-          placeholder="Nombre del usuario"
-          value={nombreUsuario}
-          onChange={(e) => setNombreUsuario(e.target.value)}
-          required
-        />
-      </div>
+        <div className="form-group">
+          <label className="label-usuario" htmlFor="usuario">
+            Usuario:
+          </label>
+          <input
+            className="input-usuario"
+            id="usuario"
+            name="usuario"
+            type="text"
+            placeholder="Nombre del usuario"
+            required
+          />
+        </div>
 
-      <div className="form-group">
-        <label className="label-password" htmlFor="password">Contraseña:</label>
-        <div className=" password-wrapper">
+        <div className="form-group">
+          <label className="label-password" htmlFor="password">
+            Contraseña:
+          </label>
           <input
             className="input-password"
             id="password"
-            type={showPassword ? "text" : "password"}
+            name="password"
+            type="password"
             placeholder="Contraseña"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
             required
           />
-          <button
-            type="button"
-            className="toggle-password"
-            onClick={() => setShowPassword(!showPassword)}
-          >
-            <i className={showPassword ? "fas fa-eye-slash" : "fas fa-eye"}></i>
+        </div>
+
+        <div className="login-actions">
+          <button type="button" className="cancel-button" onClick={onCancel}>
+            Cancelar
+          </button>
+          <button className="submit-button" type="submit" disabled={loading}>
+            {loading ? "Cargando..." : "Iniciar Sesión"}
           </button>
         </div>
-      </div>
 
-      <button className="submit-button" type="submit" disabled={loading}>
-        {loading ? "Cargando..." : "Iniciar Sesión"}
-      </button>
-    </form>
+        <a
+          href="#"
+          className="register-link"
+          onClick={(e) => {
+            e.preventDefault();
+            navigate("/Logins"); // Redirige a la página de registro
+          }}
+        >
+          Registrarse
+        </a>
+      </form>
+    </div>
   );
 }
 

@@ -1,12 +1,30 @@
 import "./Major.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import imagen1 from "./components/imagenes/imagen1.jpg";
 import imagen2 from "./components/imagenes/imagen2.jpg";
 import imagen3 from "./components/imagenes/imagen3.jpg";
 import logo from "./components/imagenes/logo.png";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
+import { useEffect } from "react";
 
 function Major() {
+
+  const navigate = useNavigate(); 
+
+  // Verifica si el token de autenticación existe en el almacenamiento local
+  useEffect(() => {
+    const autenticar = localStorage.getItem("Exito");
+    if(!autenticar) {
+      navigate("/"); 
+    }
+  },[navigate]);
+
+  // Elimina el token de autenticación
+  const handleLogout = () => {
+    localStorage.removeItem("Exito");
+    navigate("/"); 
+  };
+
   return (
     <div>
       <div className="Container_Major">
@@ -14,11 +32,10 @@ function Major() {
         <img src={logo} alt="Logo Gimnasio Atlhon" className="principal-logo-image" />
         </div>
         <nav className="navbar">
-          <Link to="/client">Clientes</Link>
+          <Link to="/Client">Clientes</Link>
           <Link to="/Plan">Planes</Link>
           <Link to="/Factura">Factura</Link>
-          
-          
+          <button onClick={handleLogout} className="logout-button">Salir</button>
         </nav>
       </div>
       <div className="title-container">
