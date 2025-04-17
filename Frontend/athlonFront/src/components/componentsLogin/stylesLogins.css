@@ -1,0 +1,35 @@
+/* Estilos para el componente Logins */
+
+Estilo general para el contenedor de Logins
+.logins-container {
+    max-width: 500px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrar el contenedor */
+    padding: 20px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde del contenedor */
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: #f9f9f9; /* Color de fondo */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+/* Estilo para el título de Logins */
+#logins-title {
+    text-align: center; /* Centrar el título */
+    margin-bottom: 20px; /* Espaciado debajo del título */
+    font-size: 24px; /* Tamaño de fuente del título */
+    color: #333; /* Color del texto */
+}
+
+/* Estilo para el enlace de volver */
+.back-link {
+    display: inline-block; /* Hacer que el enlace sea un bloque en línea */
+    margin-top: 20px; /* Espaciado superior */
+    text-align: center; /* Centrar el texto del enlace */
+    color: #4CAF50; /* Color del enlace */
+    text-decoration: none; /* Sin subrayado */
+    font-weight: bold; /* Negrita para el enlace */
+}
+
+/* Efecto hover para el enlace de volver */
+.back-link:hover {
+    text-decoration: underline; /* Subrayar al pasar el mouse */
+}
