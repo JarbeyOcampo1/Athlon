@@ -14,6 +14,7 @@ function Client() {
   const [clients, setClients] = useState([]);
   const [editingClient, setEditingClient] = useState(null);
   const [isModalOpen, setModalOpen] = useState(false); // Estado para el modal
+  const [errorMessage, setErrorMessage] = useState(""); // Estado para mensajes de error
 
   useEffect(() => {
     const autenticar = localStorage.getItem("Exito");
@@ -37,7 +38,7 @@ function Client() {
       setClients(response.data);
       console.log(response.data);
     } catch (error) {
-      console.log("Error al cargar clientes", error);
+      setErrorMessage("Error al cargar clientes. Por favor, inténtalo de nuevo más tarde.");
     }
   };
 
@@ -127,6 +128,7 @@ function Client() {
       </div>
       <h1>Clientes</h1>
       <button onClick={() => setModalOpen(true)}>Crear Nuevo Cliente</button>
+      {errorMessage && <p className="error-message">{errorMessage}</p>}
       <ClientTable
         clients={clients}
         onEdit={handleEditClient}
