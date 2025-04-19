@@ -11,7 +11,7 @@ const ClientRow = ({client,onEdit,onDelete}) => {
     };
 
     return (
-        <tr>
+        <tr className="client-row">
             <td>{client.nombreC}</td>
             <td>{client.apellidoC}</td>
             <td>{client.email}</td>

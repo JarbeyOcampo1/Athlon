@@ -3,7 +3,7 @@ import ClientRow from "./ClientRow";
 function ClientTable({ clients, onEdit, onDelete }) {
   return (
     <div>
-      <table>
+      <table className="client-table">
         <thead>
           <tr>
             <th>Nombre</th>
