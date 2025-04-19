@@ -1,6 +1,5 @@
 import ClientRow from "./ClientRow";
 
-
 function ClientTable({ clients, onEdit, onDelete }) {
   return (
     <div>
