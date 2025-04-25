@@ -4,7 +4,6 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import ClientTable from "./ClientTable"; // Asegúrate de importar ClientTable
 import Modal from "./ClientModal"; // Importa el nuevo componente Modal
-import Swal from "sweetalert2"; // Importa SweetAlert2
 
 import "../componentsClient/styles.css";
 import logo from "../imagenes/logo.png";
@@ -66,45 +65,12 @@ function Client() {
   };
 
   const handleDeleteClient = async (clienteID) => {
-    // Mostrar alerta de confirmación antes de eliminar
-    Swal.fire({
-      title: "¿Estás seguro?",
-      text: "Esta acción no se puede deshacer.",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonText: "Sí, eliminar",
-      cancelButtonText: "Cancelar",
-      customClass: {
-      popup: "swal-custom", // Aplica la clase personalizada
-      },
-    }).then(async (result) => {
-      if (result.isConfirmed) {
-        try {
-          await axios.delete(`http://localhost:8080/api/clientes/${clienteID}`);
-          fetchClients(); // Actualizar la lista de clientes
-          Swal.fire({
-            icon: "success",
-            title: "Cliente eliminado",
-            text: "El cliente ha sido eliminado con éxito.",
-            confirmButtonText: "Aceptar",
-            customClass: {
-            popup: "swal-custom", // Aplica la clase personalizada
-            },
-          });
-        } catch (error) {
-          console.log("Error al eliminar cliente", error);
-          Swal.fire({
-            icon: "error",
-            title: "Error",
-            text: "No se pudo eliminar el cliente. Inténtalo de nuevo.",
-            confirmButtonText: "Aceptar",
-            customClass: {
-            popup: "swal-custom", // Aplica la clase personalizada
-            },
-          });
-        }
-      }
-    });
+    try {
+      await axios.delete(`http://localhost:8080/api/clientes/${clienteID}`);
+      fetchClients(); // Actualizar la lista de clientes
+    } catch (error) {
+      console.log("Error al eliminar cliente", error);
+    }
   };
 
   return (
