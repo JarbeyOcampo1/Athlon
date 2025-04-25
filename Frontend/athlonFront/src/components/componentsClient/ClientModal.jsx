@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Swal from "sweetalert2";
 
 const Modal = ({ isOpen, onClose, onSubmit, initialClient }) => {
   const [nombreC, setNombreC] = useState("");
@@ -35,40 +34,11 @@ const Modal = ({ isOpen, onClose, onSubmit, initialClient }) => {
     };
 
     onSubmit(resData);
-
-    // Mostrar alerta de éxito
-    Swal.fire({
-      icon: "success",
-      title: initialClient ? "Cliente actualizado" : "Cliente registrado",
-      text: initialClient
-        ? "Los datos del cliente se han actualizado correctamente."
-        : "El cliente ha sido registrado con éxito.",
-      confirmButtonText: "Aceptar",
-      customClass: {
-      popup: "swal-custom", // Aplica la clase personalizada
-      },
-    });
-
     onClose(); // Cerrar el modal después de enviar
   };
 
   const handleClose = () => {
-    // Mostrar alerta de confirmación al cerrar el modal
-    Swal.fire({
-      title: "¿Estás seguro?",
-      text: "Los cambios no guardados se perderán.",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonText: "Sí, cerrar",
-      cancelButtonText: "Cancelar",
-      customClass: {
-      popup: "swal-custom", // Aplica la clase personalizada
-      },
-    }).then((result) => {
-      if (result.isConfirmed) {
-        onClose(); // Cerrar el modal si el usuario confirma
-      }
-    });
+    onClose(); // Cerrar el modal directamente
   };
 
   if (!isOpen) return null; // No renderizar si el modal no está abierto
