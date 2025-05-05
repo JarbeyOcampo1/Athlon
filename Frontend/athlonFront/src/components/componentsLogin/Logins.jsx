@@ -40,7 +40,6 @@ function Logins() {
             <h1 id="logins-title">Crear un Usuario</h1>
             <br />
             <LoginsForm onSubmit={createLogin}/>
-            <Link to='/'> Volver </Link>
         </div>
     );
 }

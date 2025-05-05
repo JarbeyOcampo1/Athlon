@@ -65,10 +65,9 @@ function LoginsForm({ onSubmit, initialLogin }) {
         />
       </div>
       <div className="form-group" id="form-group-submit">
-        <button type="submit" className="submit-button-logins">
-          Registrar Usuario
-        </button>
+        <button type="submit" className="submit-button-logins"> Registrar Usuario </button>
       </div>
+      <Link className="back-link" to="/"> Volver </Link>
     </form>
   );
 }
