@@ -1,0 +1,98 @@
+/* Contenedor general del formulario Logins */
+.logins-form {
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #cf911d; /* mismo color del primer formulario */
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.9); /* fondo con ligera transparencia */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Título del login */
+  .logins-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #cf911d; /* color del título */
+  }
+  
+  /* Grupo de campos del formulario */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  /* Etiquetas */
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  /* Inputs */
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cf911d;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+  }
+  
+  /* Focus en inputs */
+  input:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  /* Botón enviar */
+  .submit-button-logins {
+    width: 100%;
+    padding: 10px;
+    background-color: #cf911d;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  /* Hover en botón */
+  .submit-button-logins:hover {
+    background-color: #b78a1d;
+  }
+  
+  /* Botón deshabilitado */
+  .submit-button-logins:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Enlace de volver */
+  .back-link {
+    display: block;
+    width: fit-content;
+    margin: 20px auto 0 auto;
+    text-align: center;
+    color: #cf911d;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  .back-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Mensaje de error */
+  .error-message {
+    color: red;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  

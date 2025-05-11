@@ -1,0 +1,9 @@
+/* Estilo para el título de Logins */
+#logins-title {
+    text-align: center; /* Centrar el título */
+    margin-bottom: 20px; /* Espaciado debajo del título */
+    font-size: 24px; /* Tamaño de fuente del título */
+    color: #cf911d; /* Color del texto */
+}
+
+
