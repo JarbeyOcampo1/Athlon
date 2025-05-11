@@ -92,8 +92,7 @@ function Client() {
         </nav>
       </div>
       <h1>Clientes</h1>
-      <button onClick={() => setModalOpen(true)}>Crear Nuevo Cliente</button>
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
+      <button id="create-client-button" onClick={() => setModalOpen(true)}>Crear Nuevo Cliente</button>{errorMessage && <p className="error-message">{errorMessage}</p>}
       <ClientTable
         clients={clients}
         onEdit={handleEditClient}

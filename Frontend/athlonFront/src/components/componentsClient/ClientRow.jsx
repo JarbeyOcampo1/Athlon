@@ -19,9 +19,8 @@ const ClientRow = ({client,onEdit,onDelete}) => {
             <td>{client.fechaVencimiento}</td>
             <td>
                 <div>
-                    <button onClick={handleEdit}> Editar </button>
-                    <button onClick={handleDelete}> Eliminar </button>
-                </div>
+                     <button id="edit-client-button" onClick={handleEdit}> Editar </button>
+                    <button id="delete-client-button" onClick={handleDelete}> Eliminar </button></div>
             </td>
         </tr>
     );

@@ -1,0 +1,180 @@
+/* ClientTable Styles */
+.client-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.client-table th, .client-table td {
+    border: 1px solid #ddd;
+    padding: 8px; /* Aumentado para mejorar la legibilidad */
+}
+
+.client-table th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+.client-table .no-clients {
+    text-align: center;
+    font-style: italic;
+}
+
+/* Estilos para el Modal */
+.modal-overlay {
+    position: fixed; /* Fijo para cubrir toda la pantalla */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    display: flex; /* Usar flexbox para centrar el contenido */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    z-index: 1000; /* Asegurarse de que esté por encima de otros elementos */
+}
+
+.modal-content {
+    background-color: #fff; /* Color de fondo del modal */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+    padding: 50px; /* Espaciado interno */
+    width: 90%; /* Ancho del modal */
+    max-width: 500px; /* Ancho máximo del modal */
+    position: relative; /* Para posicionar el botón de cerrar */
+}
+
+.modal-close-button {
+    position: absolute; /* Posicionar el botón de cerrar en la esquina */
+    top: 10px;
+    right: 10px;
+    background: none; /* Sin fondo */
+    border: none; /* Sin borde */
+    font-size: 14px; /* Tamaño de fuente */
+    cursor: pointer; /* Cambiar el cursor al pasar el mouse */
+    color: #333; /* Color del texto */
+}
+
+.modal-close-button:hover {
+    color: #f44336; /* Cambiar color al pasar el mouse */
+}
+
+/* Estilos para el formulario dentro del modal */
+.modal-title {
+    text-align: center; /* Centrar el título del modal */
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column; /* Colocar los elementos en columna */
+    gap: 15px; /* Espacio entre los elementos del formulario */
+}
+
+.modal-form-group {
+    display: flex;
+    flex-direction: column; /* Colocar etiqueta y input en columna */
+}
+
+.modal-label {
+    font-weight: bold; /* Negrita para las etiquetas */
+    margin-bottom: 5px; /* Espacio debajo de la etiqueta */
+}
+
+.modal-input {
+    padding: 8px; /* Espaciado interno para los inputs */
+    font-size: 14px; /* Tamaño de fuente para los inputs */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 4px; /* Bordes redondeados */
+    transition: border-color 0.3s; /* Transición suave para el borde */
+}
+
+.modal-input:focus {
+    border-color: #4CAF50; /* Cambia el color del borde al enfocar */
+    outline: none; /* Sin contorno */
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Sombra para indicar enfoque */
+}
+
+.modal-submit-button {
+    padding: 12px; /* Aumentado para mayor comodidad */
+    background-color: #4CAF50; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px; /* Aumentado el tamaño de la fuente */
+    transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+}
+
+.modal-submit-button:hover {
+    background-color: #45a049; /* Color de fondo al pasar el mouse */
+    transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
+}
+
+.modal-submit-button:active {
+    transform: scale(0.95); /* Efecto de reducción al hacer clic */
+}
+
+#create-client-button {
+  margin-bottom: 20px; /* Espacio en la parte inferior */
+  margin-left: 10px; /* Mueve el botón hacia la izquierda */
+  background-color: #4CAF50; /* Color de fondo verde */
+  color: white; /* Color del texto */
+  padding: 10px 12px; /* Aumenta el tamaño del botón */
+  border: none; /* Sin borde */
+  border-radius: 8px; /* Bordes redondeados */
+  font-size: 16px; /* Tamaño de fuente */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+}
+
+#create-client-button:hover {
+  background-color: #0c5a11; /* Color más oscuro al pasar el mouse */
+  transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
+}
+
+#create-client-button:active {
+  transform: scale(0.95); /* Efecto de reducción al hacer clic */
+}
+/* Estilos para el botón de editar */
+#edit-client-button {
+  background-color: #2196F3; /* Azul */
+  color: white; /* Texto blanco */
+  padding: 8px 16px; /* Tamaño del botón */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  font-size: 14px; /* Tamaño de fuente */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+  transform: scale(0.95);
+}
+
+#edit-client-button:hover {
+  background-color: #0b7dda; /* Azul más oscuro al pasar el mouse */
+  transform: scale(1.05); /* Efecto de aumento */
+}
+
+#edit-client-button:active {
+  transform: scale(0.95); /* Efecto de reducción al hacer clic */
+}
+
+/* Estilos para el botón de eliminar */
+#delete-client-button {
+  background-color: #f44336; /* Rojo */
+  color: white; /* Texto blanco */
+  margin-left: 10px;
+  padding: 8px 16px; /* Tamaño del botón */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  font-size: 14px; /* Tamaño de fuente */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+}
+
+#delete-client-button:hover {
+  background-color: #d32f2f; /* Rojo más oscuro al pasar el mouse */
+  transform: scale(1.05); /* Efecto de aumento */
+}
+
+#delete-client-button:active {
+  transform: scale(0.95); /* Efecto de reducción al hacer clic */
+}
