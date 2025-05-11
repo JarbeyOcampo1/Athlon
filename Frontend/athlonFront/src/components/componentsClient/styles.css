@@ -113,21 +113,68 @@
 .modal-submit-button:active {
     transform: scale(0.95); /* Efecto de reducción al hacer clic */
 }
-.swal-custom {
-    width: 300px !important; /* Ajusta el ancho del cuadro */
-    padding: 20px !important; /* Ajusta el espaciado interno */
-    font-size: 14px; /* Tamaño de fuente más pequeño */
+
+#create-client-button {
+  margin-bottom: 20px; /* Espacio en la parte inferior */
+  margin-left: 10px; /* Mueve el botón hacia la izquierda */
+  background-color: #4CAF50; /* Color de fondo verde */
+  color: white; /* Color del texto */
+  padding: 10px 12px; /* Aumenta el tamaño del botón */
+  border: none; /* Sin borde */
+  border-radius: 8px; /* Bordes redondeados */
+  font-size: 16px; /* Tamaño de fuente */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
 }
 
-.swal-custom .swal2-title {
-    font-size: 18px; /* Tamaño del título */
+#create-client-button:hover {
+  background-color: #0c5a11; /* Color más oscuro al pasar el mouse */
+  transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
 }
 
-.swal-custom .swal2-content {
-    font-size: 14px; /* Tamaño del contenido */
+#create-client-button:active {
+  transform: scale(0.95); /* Efecto de reducción al hacer clic */
+}
+/* Estilos para el botón de editar */
+#edit-client-button {
+  background-color: #2196F3; /* Azul */
+  color: white; /* Texto blanco */
+  padding: 8px 16px; /* Tamaño del botón */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  font-size: 14px; /* Tamaño de fuente */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+  transform: scale(0.95);
 }
 
-.swal-custom .swal2-actions button {
-    font-size: 14px; /* Tamaño de los botones */
-    padding: 8px 12px; /* Espaciado de los botones */
+#edit-client-button:hover {
+  background-color: #0b7dda; /* Azul más oscuro al pasar el mouse */
+  transform: scale(1.05); /* Efecto de aumento */
+}
+
+#edit-client-button:active {
+  transform: scale(0.95); /* Efecto de reducción al hacer clic */
+}
+
+/* Estilos para el botón de eliminar */
+#delete-client-button {
+  background-color: #f44336; /* Rojo */
+  color: white; /* Texto blanco */
+  margin-left: 10px;
+  padding: 8px 16px; /* Tamaño del botón */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  font-size: 14px; /* Tamaño de fuente */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+}
+
+#delete-client-button:hover {
+  background-color: #d32f2f; /* Rojo más oscuro al pasar el mouse */
+  transform: scale(1.05); /* Efecto de aumento */
+}
+
+#delete-client-button:active {
+  transform: scale(0.95); /* Efecto de reducción al hacer clic */
 }
