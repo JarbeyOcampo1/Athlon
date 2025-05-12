@@ -4,7 +4,6 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import ClientTable from "./ClientTable"; // Asegúrate de importar ClientTable
 import Modal from "./ClientModal"; // Importa el nuevo componente Modal
-import "./Client.css"; // Asegúrate de tener estilos para el modal
 import logo from "../imagenes/logo.png";
 
 function Client() {
