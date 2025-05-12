@@ -1,5 +1,4 @@
 import ClientRow from "./ClientRow";
-import './ClientTable.css';
 
 function ClientTable({ clients, onEdit, onDelete }) {
   return (

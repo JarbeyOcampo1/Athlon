@@ -4,7 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import ClientTable from "./ClientTable"; // Asegúrate de importar ClientTable
 import Modal from "./ClientModal"; // Importa el nuevo componente Modal
-import "./Client.css"; // Asegúrate de tener estilos para el modal
+import "./styles.css"; // Asegúrate de tener estilos para el modal
 import logo from "../imagenes/logo.png";
 
 function Client() {
@@ -80,6 +80,8 @@ function Client() {
             src={logo}
             alt="Logo Gimnasio Atlhon"
             className="principal-logo-image"
+            onClick={() => navigate("/Major")} // Navega a la página principal al hacer clic
+            style={{ cursor: "pointer" }} // Cambia el cursor para indicar que es clickeable
           />
         </div>
         <nav className="navbar">
