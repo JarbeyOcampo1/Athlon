@@ -1,0 +1,72 @@
+.plan-table {
+  margin: 20px 0;
+}
+
+.plan-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.plan-table th, .plan-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.plan-table th {
+  background-color: #f2f2f2;
+}
+
+.plan-form {
+  margin: 20px 0;
+}
+
+.plan-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.plan-form label {
+  font-weight: bold;
+}
+
+.plan-form input, .plan-form textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.plan-form button {
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.plan-form button:hover {
+  background-color: #45a049;
+}
+#add-plan-button {
+  margin-bottom: 20px; /* Espacio en la parte inferior */
+  margin-left: 10px; /* Mueve el botón hacia la izquierda */
+  background-color: #4CAF50; /* Color de fondo verde */
+  color: white; /* Color del texto */
+  padding: 10px 12px; /* Aumenta el tamaño del botón */
+  border: none; /* Sin borde */
+  border-radius: 8px; /* Bordes redondeados */
+  font-size: 16px; /* Tamaño de fuente */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+}
+
+#add-plan-button:hover {
+  background-color: #0c5a11; /* Color más oscuro al pasar el mouse */
+  transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
+}
+
+#add-plan-button:active {
+  transform: scale(0.95); /* Efecto de reducción al hacer clic */
+}
