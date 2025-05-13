@@ -1,162 +1,175 @@
-/* Contenedor principal */
-.login-container {
+/* Auth3D.css - Estilos para el componente 3D de autenticación */
+
+.auth-3d-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background: url('ruta/a/tu/imagen-de-fondo.jpg') no-repeat center center fixed;
-  background-size: cover;
-}
-
-/* Contenedor de los botones */
-.login-actions {
-  display: flex;
-  /* Alinea los botones en una fila */
-  justify-content: space-between;
-  /* Espacio uniforme entre los botones */
-  gap: 15px;
-  /* Espaciado entre los botones */
-  margin-top: 20px;
-  /* Espaciado superior */
-}
-/* Botón Cancelar */
-.cancel-button {
-  width: 48%;
-  padding: 10px;
-  background-color: #cf911d;
-  color: white;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  transition: background-color 0.3s;
-}
-
-.cancel-button:hover {
-  background-color: #b78a1d;
-}
-
-/* Botón Iniciar sesión */
-.submit-button {
-  width: 48%;
-  padding: 10px;
-  background-color: #cf911d;
-  color: white;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  transition: background-color 0.3s;
-}
-
-.submit-button:hover {
-  background-color: #b78a1d;
-}
-
-/* Enlace Registrarse */
-.register-link {
-  display: block;
-  margin-top: 15px;
-  color: #cf911d;
-  text-decoration: none;
-  font-size: 14px;
-  text-align: center;
-}
-
-.register-link:hover {
-  text-decoration: underline;
-}
-
-.login-formI {
-  max-width: 400px;
-  width: 100%;
+  min-height: 100vh;
   padding: 20px;
-  border: 1px solid #cf911d;
-  border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.9);
-  /* Fondo blanco con transparencia */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  /* Sombra más visible */
+  background-image: url("./components/imagenes/fondo2.jpg");
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.login-title {
+.auth-3d-card {
+  position: relative;
+  width: 400px;
+  height: 550px;
+  perspective: 1500px;
+  transform-style: preserve-3d;
+  transition: transform 1s ease;
+}
+
+.auth-3d-card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.auth-title {
   font-size: 24px;
-  margin-bottom: 20px;
+  color: #cf911d; /* Color del título */
   text-align: center;
-  color: #cf911d;
-  /* Color del texto del título */
+  margin-bottom: 20px;
 }
 
-.error-message {
-  color: red;
-  text-align: center;
-  margin-bottom: 10px;
+.avatar {
+  width: 80px;
+  height: 80px;
+  background-color: #cf911d; /* Color del avatar */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 40px;
+  margin: 0 auto 20px;
+}
+
+.auth-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .form-group {
-  margin-bottom: 15px;
-}
-
-.label-usuario,
-.label-password {
-  display: block;
-  margin-bottom: 5px;
-  color: #555;
-  /* Color de las etiquetas */
-}
-
-/* Estilos para los inputs de usuario y contraseña */
-.input-usuario,
-.input-password {
-  width: 100%;
-  /* Ambos inputs ocuparán el 100% del ancho del contenedor */
-  padding: 10px;
-  /* Espaciado interno uniforme */
-  border: 1px solid #cf911d;
-  /* Borde del mismo color */
-  border-radius: 4px;
-  /* Bordes redondeados */
-  box-sizing: border-box;
-  /* Incluye el padding y el borde en el ancho total */
-  font-size: 14px;
-  /* Tamaño de fuente uniforme */
-  line-height: 1.5;
-  /* Altura de línea uniforme */
-  transition: border-color 0.3s;
-  /* Transición suave al enfocar */
-}
-
-.input-usuario:focus,
-.input-password:focus {
-  border-color: #007bff;
-  /* Cambia el color del borde al enfocar */
-  outline: none;
-  /* Elimina el borde predeterminado del navegador */
-}
-
-.password-wrapper {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  gap: 5px;
 }
 
-.toggle-password {
-  background: none;
+.form-group label {
+  font-size: 14px;
+  color: #555;
+  font-weight: 500;
+}
+
+.form-group input {
+  padding: 10px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  width: 380px; /* Ajusta el ancho según lo que necesites */
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #cf911d; /* Color del borde al enfocar */
+  box-shadow: 0 0 0 2px rgba(207, 145, 29, 0.2);
+}
+
+.auth-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.submit-button,
+.cancel-button {
+  padding: 12px 20px;
   border: none;
-  color: #cf911d;
-  /* Color del ícono de mostrar/ocultar */
+  border-radius: 8px;
+  font-weight: 600;
   cursor: pointer;
-  margin-left: 5px;
-  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.submit-button {
+  background: linear-gradient(135deg, #cf911d, #e8b44c); /* Color del botón de envío */
+  color: white;
+  flex-grow: 1;
 }
 
 .submit-button:hover {
-  background-color: #b78a1d;
-  /* Color del botón al pasar el mouse */
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(207, 145, 29, 0.5);
 }
 
 .submit-button:disabled {
-  background-color: #ccc;
+  opacity: 0.7;
   cursor: not-allowed;
+}
+
+.cancel-button {
+  background-color: #f0f0f0; /* Color del botón de cancelar */
+  color: #555;
+  margin-right: 10px;
+}
+
+.cancel-button:hover {
+  background-color: #e0e0e0;
+}
+
+.error-message {
+  color: #e53935; /* Color del mensaje de error */
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-align: center;
+  background-color: rgba(229, 57, 53, 0.1);
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.switcher {
+  font-size: 14px;
+  color: #cf911d; /* Color del texto del conmutador */
+  text-align: center;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.instruction {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  color: #777;
+}
+
+/* Mejoras visuales */
+.auth-3d-card.flipped .card-back {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); /* Sombras adicionales cuando está girada */
+}
+
+.auth-3d-card:not(.flipped):hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Efecto al pasar el ratón */
 }
